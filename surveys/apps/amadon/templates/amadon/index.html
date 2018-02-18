@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
+</head>
+<body>
+<div class="container">
+<h1>AMADON</h1>
+	<table class="table">
+		<tr>
+			<th>Item</th>
+			<th>Price</th>
+			<th>Actions</th>
+		</tr>
+		<tr>
+			<td>Dojo Tshirt</td>
+			<td>$19.99</td>
+			<td>
+				<form action="/amadon/buy" method="POST">
+					{% csrf_token %}
+					<select name="quantity">
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+					</select>
+					<input type="hidden" name="product" value="shirt">
+					<input type="submit" value="Buy!" class="btn btn-primary">
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<td>Dojo Sweater</td>
+			<td>$29.99</td>
+			<td>
+				<form action="/amadon/buy" method="POST">
+					{% csrf_token %}
+					<select name="quantity">
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+					</select>
+					<input type="hidden" name="product" value="sweater">
+					<input type="submit" value="Buy!" class="btn btn-primary">
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<td>Dojo Cup</td>
+			<td>$4.99</td>
+			<td>
+				<form action="/amadon/buy" method="POST">
+					{% csrf_token %}
+					<select name="quantity">
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+					</select>
+					<input type="hidden" name="product" value="cup">
+					<input type="submit" value="Buy!" class="btn btn-primary">
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<td>Algorithm Book</td>
+			<td>$49.99</td>
+			<td>
+				<form action="/amadon/buy" method="POST">
+					{% csrf_token %}
+					<select name="quantity">
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+					</select>
+					<input type="hidden" name="product" value="book">
+					<input type="submit" value="Buy!" class="btn btn-primary">
+				</form>
+			</td>
+		</tr>
+	</table>
+</div>
+</body>
+</html>

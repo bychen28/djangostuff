@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+<div class="container" style="width: 400px; display: inline-block;">
+	<h3>Add a new word</h3>
+	<form action="session_words/process" method="post">
+		{% csrf_token %}
+		<input type="text" name="word" class="form-control">
+		<div class="radio">
+			<h5>Choose color</h5>
+			<input type="radio" name="color" value="red"> Red<br>
+  			<input type="radio" name="color" value="green"> Green<br>
+  			<input type="radio" name="color" value="blue"> Blue
+  		</div>
+  		<div class="checkbox">
+  			<label><input type="checkbox" value="big" name="size">Show in BIG Fonts</label>
+		</div>
+		<input type="submit" name="submit" value="Submit" class="btn btn-primary">
+	</form>
+</div>
+<div class="container" style="width: 400px; display: inline-block; vertical-align: top; padding-top: 20px">
+	<a href="session_words/clear"><button class="btn btn-danger">Clear Session</button></a>
+	{% for i in request.session.allwords %}
+	<p><span style="text-transform: {{ i.size }}; color: {{ i.color }};">{{ i.word }}</span> - added on {{ i.time }}</p>
+	{% endfor %}
+</div>
+</div>
+</body>
+</html>
