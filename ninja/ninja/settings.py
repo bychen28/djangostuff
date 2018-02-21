@@ -31,6 +31,10 @@ print "in settings"
 # Application definition
 
 INSTALLED_APPS = [
+    'apps.book_authors',
+    'apps.likes_books',
+    'apps.user_login',
+    'apps.dojo_ninjas',
     'apps.ninja_gold',
     'django.contrib.admin',
     'django.contrib.auth',

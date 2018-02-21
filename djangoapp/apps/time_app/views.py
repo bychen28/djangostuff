@@ -8,3 +8,10 @@ def index(request):
 	print data['time']
 	return render(request, 'time_app/index.html', data)
 # Create your views here.
+def result(request):
+	data = {
+	'date': strftime("%b %d %Y", gmtime()),
+	'time': strftime("%H:%M %p", gmtime())
+	}
+	print data['time']
+	return render(request, 'time_app/index.html', data)

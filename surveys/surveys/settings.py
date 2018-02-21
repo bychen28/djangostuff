@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'apps.survey_form',
+    'apps.users',
     'apps.session_words',
     'apps.amadon',
     'django.contrib.admin',

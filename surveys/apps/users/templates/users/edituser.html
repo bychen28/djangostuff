@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+	<h1>Edit User {{ users.id }}</h1>
+  {% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+	<form action='/users/{{ users.id }}/update' method='post'>
+        {% csrf_token %}
+        <div class="form-group">Name: <input type='text' name='name' class="form-control" value="{{ users.name }}"></div>
+        <div class="form-group">Email: <input type="text" name="email" class="form-control" value="{{ users.email }}"></div>
+        <div class="form-group"><input type='submit' value='Update'></div>
+   	</form>
+   	<a href="/users/{{ users.id }}"><button class="button">Show</button></a>
+   	<a href="/users"><button class="button">Go Back</button></a>
+</div>
+</body>
+</html>
