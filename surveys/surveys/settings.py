@@ -32,6 +32,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'apps.survey_form',
+    'apps.login',
+    'apps.courses',
     'apps.users',
     'apps.session_words',
     'apps.amadon',

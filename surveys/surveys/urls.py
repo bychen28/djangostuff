@@ -21,5 +21,7 @@ urlpatterns = [
 	url(r'^session_words', include('apps.session_words.urls')),
     url(r'^amadon', include('apps.amadon.urls')),
     url(r'^users', include('apps.users.urls')),
+    url(r'^courses', include('apps.courses.urls')),
+    url(r'^login', include('apps.login.urls')),
     url(r'^admin/', admin.site.urls),
 ]
